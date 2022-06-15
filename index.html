@@ -59,7 +59,7 @@ background:rgba(0, 255, 0, 0.6);
 }
 </style>  
 </head>
-<body onload="welcome()">
+<body>
 <div class="content">
  <center>
 <div id="home" class="tabcontent">
@@ -148,13 +148,8 @@ background:rgba(0, 255, 0, 0.6);
 </div>    </div>
 
 </form>
-<div id="sound" style="display:none;"></div>
+
 <script>
-function welcome() {
-var mp3 = '<source src="welcome.mp3" type="audio/mpeg">';
-                document.getElementById("sound").innerHTML = 
-                '<audio autoplay="autoplay">' + mp3 + "</audio>";
-}
 function openTab(evt, tabName) {
 var i, tabcontent, tablinks;
 
@@ -177,11 +172,11 @@ var tab = new Audio("tab.mp3");
 tab.play();
 }
 function click() {
-var click = newAudio("click.mp3");
+var click = new Audio("click.mp3");
 click.play();
 }
 function logo() {
-var logo = newAudio("logo.mp3");
+var logo = new Audio("logo.mp3");
 logo.play();
 }
  var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
