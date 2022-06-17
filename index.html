@@ -79,22 +79,22 @@ background:rgba(0, 255, 0, 0.6);
 <img src="https://te.legra.ph/file/1456591743bc08490d50c.jpg" alt="Blind Tech Agent logo" oncontextmenu="location.href='https://youtube.com/c/BlindTechAgent'; logo()"></img>
 </div>
 <div id="features" class="tabcontent">
-<button class="tbox" onclick="location.href='go:age'; click()">age calculator</button>
-<button class="tbox" onclick="location.href='go:cal'; click()">calculator</button>
-<button class="tbox" onclick="location.href='go:chat'; click()">chat room</button>
-<button class="tbox" onclick="location.href='go:lvtv'; click()">live tv channels</button>
-<button class="tbox" onclick="location.href='go:notepad'; click()">Notepad</button>
-<button class="tbox" onclick="location.href='go:quiz'; click()">play quiz</button>
-<button class="tbox" onclick="location.href='go:psw'; click()">password generater</button>
-<button class="tbox" onclick="location.href='go:anelizer'; click()">text anelicer</button>
-<button class="tbox" onclick="location.href='go:tts'; click()">text to speech</button>
-<button class="tbox" onclick="location.href='go:todo'; click()">todo list</button>
-<button class="tbox" onclick="location.href='go:translator'; click()">translator</button>
-<button class="tbox" onclick="location.href='go:web'; click()">useful websites</button>
-<button class="tbox" onclick="location.href='go:wa'; click()">WhatsApp number link generator</button>
-<button class="tbox" onclick="location.href='go:ytch'; click()">YouTube channels</button>
-<button class="tbox" onclick="location.href='go:ytdl'; click()">YouTube downloader</button>
-<button class="tbox" onclick="location.href='go:yrnm'; click()">your name ringtone maker</button>
+<button class="tbox" onclick="location.href='go:age'">age calculator</button>
+<button class="tbox" onclick="location.href='go:cal'">calculator</button>
+<button class="tbox" onclick="location.href='go:chat'">chat room</button>
+<button class="tbox" onclick="location.href='go:lvtv'">live tv channels</button>
+<button class="tbox" onclick="location.href='go:notepad'">Notepad</button>
+<button class="tbox" onclick="location.href='go:quiz'">play quiz</button>
+<button class="tbox" onclick="location.href='go:psw'">password generater</button>
+<button class="tbox" onclick="location.href='go:anelizer'">text anelicer</button>
+<button class="tbox" onclick="location.href='go:tts'">text to speech</button>
+<button class="tbox" onclick="location.href='go:todo'">todo list</button>
+<button class="tbox" onclick="location.href='go:translator'">translator</button>
+<button class="tbox" onclick="location.href='go:web'">useful websites</button>
+<button class="tbox" onclick="location.href='go:wa'">WhatsApp number link generator</button>
+<button class="tbox" onclick="location.href='go:ytch'">YouTube channels</button>
+<button class="tbox" onclick="location.href='go:ytdl'">YouTube downloader</button>
+<button class="tbox" onclick="location.href='go:yrnm'">your name ringtone maker</button>
 </div>
 <div id="settings" class="tabcontent">
 <h1>Settings</h1>
@@ -116,11 +116,11 @@ background:rgba(0, 255, 0, 0.6);
 <h1>Other</h1>
 <br>
 <br>
-<button class="otherBtn" onclick="location.href='http://action_notifications'; click()"><i class="fas fa-bell"></i>Notifications</button>
-<button class="otherBtn" onclick="location.href='go:about'; click()"><i class="fas fa-address-card"></i>About us</button>
-<button class="otherBtn" onclick="location.href='go:contact'; click()"><i class="fas fa-phone"></i>Contact us</button>
-<button class="otherBtn" onclick="location.href='http://action_share'; click()"><i class="fas fa-share"></i>Share this app</button>
-<button class="otherBtn" onclick="location.href='http://www.e-droid.net/privacy.php?ida=1472380&idl=en'; click()"><i class="fas fa-key"></i>Privacy Policy</button>
+<button class="otherBtn" onclick="location.href='http://action_notifications'"><i class="fas fa-bell"></i>Notifications</button>
+<button class="otherBtn" onclick="location.href='go:about'"><i class="fas fa-address-card"></i>About us</button>
+<button class="otherBtn" onclick="location.href='go:contact'"><i class="fas fa-phone"></i>Contact us</button>
+<button class="otherBtn" onclick="location.href='http://action_share'"><i class="fas fa-share"></i>Share this app</button>
+<button class="otherBtn" onclick="location.href='http://www.e-droid.net/privacy.php?ida=1472380&idl=en'"><i class="fas fa-key"></i>Privacy Policy</button>
 </div>
 </center>
 <nav class="tab">
@@ -171,14 +171,15 @@ function tab() {
 var tab = new Audio("tab.mp3");
 tab.play();
 }
-function click() {
-var click = new Audio("click.mp3");
-click.play();
-}
 function logo() {
 var logo = new Audio("logo.mp3");
 logo.play();
 }
+const btnSound = new Audio("https://www.myinstants.com/media/sounds/se_objsn_trickbjump_ng.mp3");
+const buttons = document.querySelector('.tbox');
+buttons.addEventListener("click", function() {
+btnSound.play();
+});
  var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
 
