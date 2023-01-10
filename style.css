@@ -1,0 +1,56 @@
+.tab { overflow: hidden; width:100vw; border-top: 2px solid black; background-color:lime; padding:0px; margin:0px; position:fixed; bottom:0px;}  .tab button { background-color:snow; color:blue;  border: none;   outline: none;   cursor: pointer; padding:8px; margin:0px; font-size:12px; }  .tab button.active { background-color:gold; }
+
+.otherBtn{ background:purple; color:yellow;  margin:18px 0px;  padding-bottom:20px;  width:75vw; height:6vh; font-size:1.5em; border:none;
+}
+i{ color:gold; margin:0px 10px; }
+.tabcontent {
+background:rgba(86, 165, 236, 0.6); height:100vh; padding:25px 0px;  width:100vw;
+}
+.dark {
+background:black; color:white;
+}
+h1 {  font-size:22px; margin:0px; }
+#greet {
+background:lime; color:blue; width:70%; padding:12px 2px; border:none;  font-size:1em;  text-align:center; animation: grt 3s 1s infinite alternate;
+}
+@keyframes grt { 0% {background:lime; color:blue; } 50% {background:blue; color:yellow; } 100% {background:white; color:black; 
+}
+}
+.cld {   background:gold; width:80vw; height:20vh; padding:20px 0px; border:none; border-radius:5px; margin:20px auto;  }
+#date, #time {
+color:indigo; font-weight:bold; font-size:20px; text-align:center; margin:10px 20px;
+}
+.tbox{ background:red; font-size:1em; color:white; display:inline;  margin:10px; width:43vw; height:6.5vh; border:none; padding:0px;
+}
+.statusBox {
+background:gold; color:yellow; width:92vw; height:25vh; border:none; display:grid; grid-template-columns:50% 50%; padding:0px; 
+}
+.statusBox p {
+font-size:1em; background:#6A287E; text-align:center; margin:0px; padding:10px; border:2px solid gold;
+}
+img {
+width:100px; height:100px; border:1px solid black; margin:5px;
+}
+.content {
+display:none; margin:0px; padding:0px; border:none;
+}
+form { background:orange; display:block;  margin:0px;  padding:50px 0px; width:100vw; height:100vh;  
+}
+.lnbox { background:snow;    display:block;  width:70%;  border:2px double blue;  border-radius:3px; display:block;  margin:auto;  padding:20px 0px;
+}
+#h1 { color:purple;  font-size:34px;  text-align:center;  margin:0px; }
+#entername { display:block; margin:20px auto;  background:skyblue;  color:red;
+}
+.ll { color:black; margin:10px; text-align:center; }
+#submitname { background:purple;  color:white;  width:40%;  height:4vh;  border:none;  display:block; margin:10px auto;
+}
+
+.setingBox label, .settingBox input, #forgetname {
+background:none; color:white; margin:10px; font-size:1em;  border:none;
+}
+.settingBox {
+background:black; width:90vw; color:white; height:6vh; margin:20px 0px;
+}
+#settings, #other {
+background:rgba(0, 255, 0, 0.6);
+}
