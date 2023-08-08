@@ -1,9 +1,53 @@
 <!DOCTYPE HTML>  <html lang="en">  <head>     <meta charset="UTF-8">     <meta name="viewport" content="width=device-width, initial-scale=1.0">     <meta http-equiv="X-UA-Compatible" content="ie=edge"> <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <script src="https://kit.fontawesome.com/a5db627303.js" crossorigin="anonymous"></script> 
- <link rel="stylesheet" href="style.css"> 
+<style>
+.tab { overflow: hidden; width:100vw; border-top: 2px solid black; background-color:lime; padding:0px; margin:0px; position:fixed; bottom:0px;}  .tab button { background-color:snow; color:blue;  border: none;   outline: none;   cursor: pointer; padding:8px; margin:0px; font-size:12px; }  .tab button.active { background-color:gold; }
+
+.otherBtn{ background:purple; color:yellow;  margin:18px 0px;  padding-bottom:20px;  width:75vw; height:6vh; font-size:1.5em; border:none;
+}
+i{ color:gold; margin:0px 10px; }
+.tabcontent {
+background:rgba(86, 165, 236, 0.6); height:100vh; padding:25px 0px;  width:100vw;
+}
+.dark {
+background:black; color:white;
+}
+h1 {  font-size:22px; margin:0px; }
+#greet {
+background:lime; color:blue; width:70%; padding:12px 2px; border:none;  font-size:1em;  text-align:center; animation: grt 3s 1s infinite alternate;
+}
+@keyframes grt { 0% {background:lime; color:blue; } 50% {background:blue; color:yellow; } 100% {background:white; color:black; 
+}
+}
+.cld {   background:gold; width:80vw; height:20vh; padding:20px 0px; border:none; border-radius:5px; margin:20px auto;  }
+#date, #time {
+color:indigo; font-weight:bold; font-size:20px; text-align:center; margin:10px 20px;
+}
+.tbox{ background:red; font-size:1em; color:white; display:inline;  margin:10px; width:43vw; height:6.5vh; border:none; padding:0px;
+}
+.statusBox {
+background:gold; color:yellow; width:92vw; height:25vh; border:none; display:grid; grid-template-columns:50% 50%; padding:0px; 
+}
+.statusBox p {
+font-size:1em; background:#6A287E; text-align:center; margin:0px; padding:10px; border:2px solid gold;
+}
+img {
+width:100px; height:100px; border:1px solid black; margin:5px;
+}
+
+#h1 { color:purple;  font-size:34px;  text-align:center;  margin:0px; }
+.setingBox label, .settingBox input, #forgetname {
+background:none; color:white; margin:10px; font-size:1em;  border:none;
+}
+.settingBox {
+background:black; width:90vw; color:white; height:6vh; margin:20px 0px;
+}
+#settings, #other {
+background:rgba(0, 255, 0, 0.6);
+}
+</style>
 </head>
 <body>
-<div class="content">
  <center>
 <div id="home" class="tabcontent">
 <h1>Welcome to Blind Tech Agent</h1>
@@ -27,17 +71,13 @@
 <button class="tbox" onclick="location.href='go:chat'">chat room</button>
 <button class="tbox" onclick="location.href='go:lvtv'">live tv channels</button>
 <button class="tbox" onclick="location.href='go:notepad'">Notepad</button>
-<button class="tbox" onclick="location.href='go:quiz'">play quiz</button>
 <button class="tbox" onclick="location.href='go:psw'">password generater</button>
 <button class="tbox" onclick="location.href='go:anelizer'">text anelicer</button>
-<button class="tbox" onclick="location.href='go:tts'">text to speech</button>
 <button class="tbox" onclick="location.href='go:todo'">todo list</button>
 <button class="tbox" onclick="location.href='go:translator'">translator</button>
 <button class="tbox" onclick="location.href='go:web'">useful websites</button>
 <button class="tbox" onclick="location.href='go:wa'">WhatsApp number link generator</button>
 <button class="tbox" onclick="location.href='go:ytch'">YouTube channels</button>
-<button class="tbox" onclick="location.href='go:ytdl'">YouTube downloader</button>
-<button class="tbox" onclick="location.href='go:yrnm'">your name ringtone maker</button>
 </div>
 <div id="settings" class="tabcontent">
 <h1>Settings</h1>
@@ -48,9 +88,7 @@
 <label for="chk">Dark Mode</label>
 <input type="checkbox" id="chk" />
 </div>
-<div class="settingBox">
-<button id="forgetname"></button>
-</div>
+
 <br>
 <br>
 <br>
@@ -74,23 +112,7 @@
  
 <button onclick="openTab(event, 'other'); tab()" class="tablinks">OTHER, tab</button> 
 </nav>
-</div>
 
-<form>
-<div class="remember">
-<h1 id="h1">YOUR NAME</h1>
-<br>
-<br>
-<br>
-<div class="lnbox">
-<br>
-<p class="ll">Please enter your name</p>
-<p class="ll">This name will appear on home page</p>
-      <input id="entername" type="text" required maxlength="15" placeholder="enter here" autocomplete="off" />
-      <input id="submitname" type="submit" value="save" />
-</div>    </div>
-
-</form>
 
 <script>
 function openTab(evt, tabName) {
@@ -215,32 +237,8 @@ Level.textContent = status + level;
 <script>
 const time = new Date().getHours();
 let greeting;
+let name = "user";
 
-
-const rememberMe = document.querySelector(".remember");
-const form = document.querySelector("form");
-const getName = document.querySelector("#entername");
-const submitBtn = document.querySelector("#submitname");
-const content = document.querySelector(".content");
-const forgetBtn = document.querySelector("#forgetname");
-form.addEventListener("submit", function (e) {  e.preventDefault();  }
-);
-
-submitBtn.addEventListener("click", function () {
-  localStorage.setItem("name", getName.value);
-
-  nameDisplayCheck();
-});
-
-forgetBtn.addEventListener("click", function () {
-  localStorage.removeItem("name");
-
-  nameDisplayCheck();
-});
-
-function nameDisplayCheck() {
-  if (localStorage.getItem("name")) {
-    let name = localStorage.getItem("name");
 if(time < 12) {
 greeting = "good morning "+name+"!, <br> i hope your day goes well.";
 }
@@ -254,24 +252,7 @@ else {
 greeting = "good night "+name+"!, <br> it's time to sleep.";
 }
 document.getElementById('greet').innerHTML = greeting;
-forgetBtn.textContent =  localStorage.getItem('name') + ", Change your name";
- forgetBtn.style.display = "block";
- form.style.display = "none";
-    rememberMe.style.display = "none";
-    content.style.display = "block";
-  } else {
-forgetBtn.textContent =  localStorage.getItem('name') + ", Change your name";
-
-
-    forgetBtn.style.display = "none";
-    rememberMe.style.display = "block";
-    form.style.display = "block";
-    content.style.display = "none";
-  }
-}
-forgetBtn.textContent =  localStorage.getItem('name') + ", Change your name";
-document.body.onload = nameDisplayCheck; </script>
-
+</script>
 <script>
 const chk = document.getElementById('chk');
 
